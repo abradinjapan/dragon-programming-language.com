@@ -14,7 +14,7 @@ let site_json = {
         {
             name: "about",
             top_links: "normal",
-            left_links: "empty",
+            left_links: "tutorials",
             content: [
                 {
                     type: "header",
@@ -22,7 +22,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "The Dragon Programming Language is a programming language prototype designed for creating compilers."
+                    data: "The Dragon Programming Language is a language prototype designed for creating compilers."
                 }
             ]
         },
@@ -51,7 +51,7 @@ let site_json = {
             name: "tutorials",
             content: [
                 {
-                    text: "Home",
+                    text: "Journey Start!",
                     page: "tutorial.home",
                 }
             ]
@@ -162,6 +162,19 @@ function generate_top_links(json) {
     return output;
 }
 
+// generate top navigation
+function generate_side_links(json) {
+    var output = "";
+
+    // write pieces in order
+    for (var i = 0; i < json.content.length; i++) {
+        // get content
+        output += generate_side_link(json.content[i].text, json.content[i].page);
+    }
+
+    return output;
+}
+
 // search for a page by name in the site json
 function search_for_page(json, name) {
     // search for page
@@ -192,6 +205,21 @@ function search_for_top_link_set(json, name) {
     return json.top_links[0];
 }
 
+// search for a left link set by name in the site json
+function search_for_left_link_set(json, name) {
+    // search for page
+    for (var i = 0; i < json.left_links.length; i++) {
+        // check if correct page
+        if (json.left_links[i].name == name) {
+            // return correct page
+            return json.left_links[i];
+        }
+    }
+
+    // page not found
+    return json.left_links[0];
+}
+
 // set the page body and navigation to fit the user's request
 function goto_page(page_name) {
     var page_document_div = document.getElementById("page_document_container");
@@ -199,15 +227,17 @@ function goto_page(page_name) {
     var page_left_links_div = document.getElementById("page_left_links");
     var page_json;
     var page_json_top_links;
+    var page_json_left_links;
 
     // get page json data
     page_json = search_for_page(site_json, page_name);
     page_json_top_links = search_for_top_link_set(site_json, page_json.top_links);
+    page_json_left_links = search_for_left_link_set(site_json, page_json.left_links);
 
     // setup page document contents to requested information
     page_document_div.innerHTML = generate_document(page_json);
     page_top_links_div.innerHTML = generate_top_links(page_json_top_links);
-    //page_left_links_div.innerHTML = generate_left_links();
+    page_left_links_div.innerHTML = generate_side_links(page_json_left_links);
     
     return;
 }
