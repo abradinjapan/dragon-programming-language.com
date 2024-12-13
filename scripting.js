@@ -14,7 +14,7 @@ let site_json = {
         {
             name: "about",
             top_links: "normal",
-            left_links: "tutorials",
+            left_links: "tutorial",
             content: [
                 {
                     type: "header",
@@ -26,6 +26,33 @@ let site_json = {
                 }
             ]
         },
+        {
+            name: "tutorial.home",
+            top_links: "normal",
+            left_links: "tutorial",
+            content: [
+                {
+                    type: "header",
+                    data: "Syntax"
+                },
+                {
+                    type: "text",
+                    data: "The syntax of the dragon programming language is designed to be as simple as possible and as simple to implement as possible while still retaining full language functionality."
+                },
+                {
+                    type: "text",
+                    data: "Effectively, the Dragon syntax is entirely centered around one style of statement. A function call."
+                },
+                {
+                    type: "text",
+                    data: "Function calls are expressed through the following syntax:"
+                },
+                {
+                    type: "code_block",
+                    data: "function_call_name(inputs)(outputs)"
+                }
+            ]
+        }
     ],
     top_links: [
         {
@@ -48,7 +75,7 @@ let site_json = {
             content: []
         },
         {
-            name: "tutorials",
+            name: "tutorial",
             content: [
                 {
                     text: "Journey Start!",

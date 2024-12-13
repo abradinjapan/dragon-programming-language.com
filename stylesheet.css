@@ -19,7 +19,7 @@
     --highlight-color: var(--light-red-color);
     --normal-text-color: var(--black-color);
     --border-color: var(--black-color);
-    --code-background-color: var(--light-grey-color);
+    --code-background-color: var(--white-color);
     
     /* Other Data */
     --default-border-type: solid;
@@ -38,6 +38,7 @@
     --page-left-side-navigation-padding-thickness: 20px;
     --page-left-side-navigation-link-padding-thickness: 10px;
     --page-document-text-padding-thickness: 20px;
+    --page-code-text-padding-thickness: 2px;
     --text-font: 'Arial', sans-serif;
 }
 
@@ -360,12 +361,12 @@ body {
     margin: var(--no-margin-pixel-thickness);
     padding-bottom: var(--page-document-text-padding-thickness);
     color: var(--normal-text-color);
-    border-style: var(--default-border-type);
+    border-style: var(--dashed-border-type);
     border-color: var(--border-color);
-    border-top-width: var(--no-border-pixel-thickness);
-    border-bottom-width: var(--no-border-pixel-thickness);
-    border-left-width: var(--no-border-pixel-thickness);
-    border-right-width: var(--no-border-pixel-thickness);
-    background-color: var(--background-color);
+    border-top-width: var(--page-code-text-padding-thickness);
+    border-bottom-width: var(--page-code-text-padding-thickness);
+    border-left-width: var(--page-code-text-padding-thickness);
+    border-right-width: var(--page-code-text-padding-thickness);
+    background-color: var(--code-background-color);
     width: 100%;
 }
