@@ -1,0 +1,371 @@
+:root {
+    /* Colors */
+    --light-red-color: #ff3636;
+    --light-blue-color: #00ccff;
+    --light-grey-color: #aaaaaa;
+    --grey-color: #333333;
+    --light-white-color: #eeeeee;
+    --white-color: #ffffff;
+    --black-color: #000000;
+
+    /* Dark Theme */
+    /*--background-color: var(--grey-color);
+    --highlight-color: var(--light-blue-color);
+    --normal-text-color: var(--white-color);
+    --border-color: var(--light-grey-color);*/
+
+    /* Light Theme */
+    --background-color: var(--light-white-color);
+    --highlight-color: var(--light-red-color);
+    --normal-text-color: var(--black-color);
+    --border-color: var(--black-color);
+    --code-background-color: var(--light-grey-color);
+    
+    /* Other Data */
+    --default-border-type: solid;
+    --dashed-border-type: dashed;
+    --page-person-name-font-pixel-size: 40px;
+    --text-header-size: 24px;
+    --no-margin-pixel-thickness: 0px;
+    --no-padding-pixel-thickness: 0px;
+    --no-border-pixel-thickness: 0px;
+    --edge-border-thickness-pixels: 2px;
+    --page-person-name-padding-thickness: 10px;
+    --page-person-description-padding-thickness: 15px;
+    --page-header-links-padding-thickness: 20px;
+    --page-header-link-padding-thickness: 20px;
+    --page-document-padding-thickness: 20px;
+    --page-left-side-navigation-padding-thickness: 20px;
+    --page-left-side-navigation-link-padding-thickness: 10px;
+    --page-document-text-padding-thickness: 20px;
+    --text-font: 'Arial', sans-serif;
+}
+
+html {
+    background-color: var(--background-color);
+    font-family: var(--text-font);
+    margin: var(--no-margin-pixel-thickness);
+    height: 100%;
+}
+
+body {
+    margin: var(--no-margin-pixel-thickness);
+    height: 100%;
+}
+
+#page_everything {
+    margin: var(--no-margin-pixel-thickness);
+    border: var(--no-border-pixel-thickness);
+    padding: var(--no-padding-pixel-thickness);
+}
+
+#page_person_name {
+    color: var(--highlight-color);
+    font-size: var(--page-person-name-font-pixel-size);
+    font-weight: bold;
+    text-align: center;
+    margin: var(--no-margin-pixel-thickness);
+    padding-top: var(--page-person-name-padding-thickness);
+    padding-bottom: var(--page-person-name-padding-thickness);
+    padding-left: var(--no-padding-pixel-thickness);
+    padding-right: var(--no-padding-pixel-thickness);
+    border: var(--no-border-pixel-thickness);
+}
+
+#page_person_description {
+    color: var(--normal-text-color);
+    text-align: center;
+    margin: var(--no-margin-pixel-thickness);
+    padding-left: var(--no-padding-pixel-thickness);
+    padding-right: var(--no-padding-pixel-thickness);
+    padding-top: var(--no-padding-pixel-thickness);
+    padding-bottom: var(--page-person-description-padding-thickness);
+    border: var(--no-border-pixel-thickness);
+}
+
+#page_contents_everything {
+    margin: var(--no-margin-pixel-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--edge-border-thickness-pixels);
+    border-bottom-width: var(--edge-border-thickness-pixels);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+}
+
+#page_top_links {
+    margin: var(--no-margin-pixel-thickness);
+    padding: var(--page-header-links-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--edge-border-thickness-pixels);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page_top_link {
+    margin: var(--no-margin-pixel-thickness);
+    padding-left: var(--page-header-link-padding-thickness);
+    padding-right: var(--page-header-link-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    font-weight: bold;
+    transition: color 1s ease-out;
+}
+
+.page_top_link:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#page_bottom_links {
+    margin: var(--no-margin-pixel-thickness);
+    padding: var(--page-header-links-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page_bottom_link {
+    margin: var(--no-margin-pixel-thickness);
+    padding-left: var(--page-header-link-padding-thickness);
+    padding-right: var(--page-header-link-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    text-decoration: none;
+}
+
+.page_bottom_link_a {
+    margin: var(--no-margin-pixel-thickness);
+    padding-left: var(--no-padding-pixel-thickness);
+    padding-right: var(--no-padding-pixel-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 1s ease-out;
+}
+
+.page_bottom_link_a:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#page_document_navigation_container {
+    margin: var(--no-margin-pixel-thickness);
+    padding: var(--no-padding-pixel-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    display: flex;
+    justify-content: left;
+    flex-wrap: nowrap;
+}
+
+#page_document_container {
+    width: 60%;
+    margin: var(--no-margin-pixel-thickness);
+    padding: var(--page-document-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+}
+
+#page_left_links {
+    width: 20%;
+    margin: var(--no-margin-pixel-thickness);
+    padding: var(--page-left-side-navigation-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+}
+
+.page_left_navigation_link {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-left-side-navigation-link-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    transition: color 1s ease-out;
+    font-weight: bold;
+}
+
+.page_left_navigation_link:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#page_right_links {
+    width: 20%;
+    margin: var(--no-margin-pixel-thickness);
+    padding: var(--page-left-side-navigation-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+}
+
+.page_right_navigation_link {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-left-side-navigation-link-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    transition: color 1s ease-out;
+    font-weight: bold;
+}
+
+.page_right_navigation_link:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.page_document_text {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-document-text-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+}
+
+.page_document_text_header {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-document-text-padding-thickness);
+    color: var(--highlight-color);
+    font-size: var(--text-header-size);
+    font-weight: bold;
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+}
+
+.page_document_link {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-document-text-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    transition: color 1s ease-out;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.page_document_link:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.page_document_image {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-document-text-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    width: 100%;
+}
+
+.page_document_video {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-document-text-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    width: 100%;
+}
+
+.page_document_code_block {
+    margin: var(--no-margin-pixel-thickness);
+    padding-bottom: var(--page-document-text-padding-thickness);
+    color: var(--normal-text-color);
+    border-style: var(--default-border-type);
+    border-color: var(--border-color);
+    border-top-width: var(--no-border-pixel-thickness);
+    border-bottom-width: var(--no-border-pixel-thickness);
+    border-left-width: var(--no-border-pixel-thickness);
+    border-right-width: var(--no-border-pixel-thickness);
+    background-color: var(--background-color);
+    width: 100%;
+}
