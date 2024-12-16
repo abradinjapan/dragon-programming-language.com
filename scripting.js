@@ -41,7 +41,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Effectively, the Dragon syntax is entirely centered around one style of statement. A function call."
+                    data: "Effectively, the Dragon syntax is mainly centered around one style of statement. A function call."
                 },
                 {
                     type: "text",
