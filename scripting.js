@@ -12,6 +12,40 @@ let site_json = {
             ]
         },
         {
+            name: "links",
+            top_links: "normal",
+            left_links: "empty",
+            content: [
+                {
+                    type: "header",
+                    data: "Dragon Programming Language Main Repository",
+                },
+                {
+                    type: "external_link",
+                    data: "To the dungeon where the dragon slumbers...",
+                    link: "https://github.com/abradinjapan/dragon"
+                },
+                {
+                    type: "header",
+                    data: "Dragon Compiler Tools Repository",
+                },
+                {
+                    type: "external_link",
+                    data: "To the highlands where the dragon soars across the sky...",
+                    link: "https://github.com/abradinjapan/dragon-compiler-tools"
+                },
+                {
+                    type: "header",
+                    data: "Dragon Testing Repository",
+                },
+                {
+                    type: "external_link",
+                    data: "To the battlefield where the dragon fights a brave knight...",
+                    link: "https://github.com/abradinjapan/dragon-testing"
+                }
+            ]
+        },
+        {
             name: "about",
             top_links: "normal",
             left_links: "tutorial",
@@ -33,19 +67,23 @@ let site_json = {
             content: [
                 {
                     type: "header",
-                    data: "Syntax"
+                    data: "Welcome!"
                 },
                 {
                     type: "text",
-                    data: "The syntax of the dragon programming language is designed to be as simple as possible and as simple to implement as possible while still retaining full language functionality."
+                    data: "Welcome to the Dragon programming language where roaring dragons sometimes slumber...!"
+                },
+                {
+                    type: "header",
+                    data: "Introduction"
                 },
                 {
                     type: "text",
-                    data: "Effectively, the Dragon syntax is mainly centered around one style of statement. A function call."
+                    data: "So what is Dragon exactly?"
                 },
                 {
                     type: "text",
-                    data: "Function calls are expressed through the following syntax:"
+                    data: "Dragon is an interpreted language designed for compiler development. Although, currently there are more general language features available than there are specifically compiler generating features. Most of which are in another repository other than the main Dragon repository."
                 },
                 {
                     type: "code_block",
@@ -65,6 +103,10 @@ let site_json = {
                 {
                     text: "About",
                     page: "about",
+                },
+                {
+                    text: "Links",
+                    page: "links",
                 }
             ]
         }
@@ -78,7 +120,7 @@ let site_json = {
             name: "tutorial",
             content: [
                 {
-                    text: "Journey Start!",
+                    text: "Welcome!",
                     page: "tutorial.home",
                 }
             ]
