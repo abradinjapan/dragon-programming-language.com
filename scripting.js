@@ -46,21 +46,6 @@ let site_json = {
             ]
         },
         {
-            name: "about",
-            top_links: "normal",
-            left_links: "tutorial",
-            content: [
-                {
-                    type: "header",
-                    data: "The Dragon Programming Language"
-                },
-                {
-                    type: "text",
-                    data: "The Dragon Programming Language is a language prototype designed for creating compilers."
-                }
-            ]
-        },
-        {
             name: "tutorial.home",
             top_links: "normal",
             left_links: "tutorial",
@@ -101,8 +86,8 @@ let site_json = {
             name: "normal",
             content: [
                 {
-                    text: "About",
-                    page: "about",
+                    text: "Tutorial",
+                    page: "tutorial.home",
                 },
                 {
                     text: "Links",
