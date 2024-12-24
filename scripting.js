@@ -68,11 +68,23 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon is an interpreted language designed for compiler development. Although, currently there are more general language features available than there are specifically compiler generating features. Most of which are in another repository other than the main Dragon repository."
+                    data: "Dragon is a scripting language designed primarily for compiler development. Although the language still lacks many features, the base of the language is mainly fleshed out. And I wish to create a tutorial around it."
+                },
+                {
+                    type: "text",
+                    data: "Dragon has what I like to call a statement centered syntax. In other words, the syntax revolves around a type of statement. The dragon call."
+                },
+                {
+                    type: "header",
+                    data: "Dragon Calls"
+                },
+                {
+                    type: "text",
+                    data: "A dragon call is very simple form of function call that has one name and two sets of arguments. Like so:"
                 },
                 {
                     type: "code_block",
-                    data: "function_call_name(inputs)(outputs)"
+                    data: "function_name(inputs)(outputs)"
                 }
             ]
         }

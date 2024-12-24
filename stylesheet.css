@@ -359,7 +359,10 @@ body {
 
 .page_document_code_block {
     margin: var(--no-margin-pixel-thickness);
-    padding-bottom: var(--page-document-text-padding-thickness);
+    padding-bottom: var(--no-padding-pixel-thickness);
+    padding-left: var(--page-document-text-padding-thickness);
+    padding-right: var(--page-document-text-padding-thickness);
+    padding-top: var(--no-padding-pixel-thickness);
     color: var(--normal-text-color);
     border-style: var(--dashed-border-type);
     border-color: var(--border-color);
