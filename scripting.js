@@ -42,6 +42,15 @@ let site_json = {
                     type: "external_link",
                     data: "To the battlefield where the dragon fights a brave knight...",
                     link: "https://github.com/abradinjapan/dragon-testing"
+                },
+                {
+                    type: "header",
+                    data: "Dragon Website Repository",
+                },
+                {
+                    type: "external_link",
+                    data: "To the dragon's final resting place...",
+                    link: "https://github.com/abradinjapan/dragon-programming-language.com"
                 }
             ]
         },
@@ -71,20 +80,36 @@ let site_json = {
                     data: "Dragon is a scripting language designed primarily for compiler development. Although the language still lacks many features, the base of the language is mainly fleshed out. And I wish to create a tutorial around it."
                 },
                 {
+                    type: "header",
+                    data: "Basic Syntax"
+                },
+                {
                     type: "text",
                     data: "Dragon has what I like to call a statement centered syntax. In other words, the syntax revolves around a type of statement. The dragon call."
                 },
                 {
-                    type: "header",
-                    data: "Dragon Calls"
-                },
-                {
                     type: "text",
-                    data: "A dragon call is very simple form of function call that has one name and two sets of arguments. Like so:"
+                    data: "A dragon call is a very simple form of function call that has one name and two sets of arguments. They are called like so:"
                 },
                 {
                     type: "code_block",
                     data: "function_name(inputs)(outputs)"
+                },
+                {
+                    type: "text",
+                    data: "Names can be any combination of characters from the following regex:"
+                },
+                {
+                    type: "code_block",
+                    data: "[A-Za-z0-9_.]+"
+                },
+                {
+                    type: "text",
+                    data: "Both the input and output arguments can have zero or more arguments separated by commas."
+                },
+                {
+                    type: "code_block",
+                    data: "foo(a, b, c, d)()"
                 }
             ]
         }
@@ -140,7 +165,7 @@ function generate_text(text) {
 // write code block
 function generate_code_block(text) {
     // build code
-    return ("<div class=\"page_document_code_block\"><pre>" + text + "</pre></div>");
+    return ("<div class=\"page_document_code_block_container\"><div class=\"page_document_code_block\"><pre class=\"page_document_code_block_pre\">" + text + "</pre></div></div>");
 }
 
 // write external link
