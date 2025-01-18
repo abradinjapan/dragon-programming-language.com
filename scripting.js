@@ -230,7 +230,7 @@ let site_json = {
                 },
                 {
                     type: "header",
-                    data: "String Setting"
+                    data: "Strings"
                 },
                 {
                     type: "text",
@@ -254,7 +254,83 @@ let site_json = {
                 },
                 {
                     type: "code_block",
-                    data: "dragon.set(\"New line -> %0a;\")(string_variable)\ndragon.set(\"Manually inserting three tabs -> %09;%09;%09;\")"
+                    data: "dragon.set(\"New line -> %0a;\")(string_variable)\ndragon.set(\"Manually inserting three tabs -> %09;%09;%09;\")(string_variable)"
+                },
+                {
+                    type: "header",
+                    data: "Binary Literals"
+                },
+                {
+                    type: "text",
+                    data: "Binary literals are in the first argument of the statement inputs and the variable is the first output argument."
+                },
+                {
+                    type: "text",
+                    data: "Binary literals are written with the type specifier 'dragon.binary.', ones, zeros and optionally underscores. Underscores are just formatting to spread out the bits in any way you want and have no data affecting value. The bits go highest to lowest by left to right and they can have anywhere from 1 to 64 bits."
+                },
+                {
+                    type: "text",
+                    data: "Valid examples:"
+                },
+                {
+                    type: "code_block",
+                    data: "dragon.set(dragon.binary.10101010)(variable_name_here)\ndragon.set(dragon.binary.10_1__00101010)(variable_name_here)"
+                },
+                {
+                    type: "header",
+                    data: "Integer Literals"
+                },
+                {
+                    type: "text",
+                    data: "Integer literals are written with the type specifier 'dragon.integer.', digits 0 through 9, underscores and 'n' for negative using twos compliment. Underscores are also available and are just formatting. The digits go from left to right as highest to lowest. There is no limit to how many digits a number can contain. Keep in mind however that the value of the number is still limited to 64 bits. Overflow is kept to allow for larger numbers to still have representation. And if the number is negative, the character lower case 'n' is placed as the very first digit in the literal."
+                },
+                {
+                    type: "text",
+                    data: "Valid examples:"
+                },
+                {
+                    type: "code_block",
+                    data: "[ positive integers ]\ndragon.set(dragon.integer.1234567890)(variable_name_here)\ndragon.set(dragon.integer.0_5__4__4312432)(variable_name_here)\n\n[ negative integers ]\ndragon.set(dragon.integer.n1234567890)(variable_name_here)\ndragon.set(dragon.integer.n0_5__4__4312432)(variable_name_here)"
+                },
+                {
+                    type: "header",
+                    data: "Hexadecimal Literals"
+                },
+                {
+                    type: "text",
+                    data: "Hexadecimal literals are written with the type specifier 'dragon.hexadecimal.', digits 0 through f (both upper & lower case are ok) and underscores. Underscores are just formatting. The hex-digits go from left to right as highest to lowest. There is no hex-digit limit, but keep in mind that overflow can occur."
+                },
+                {
+                    type: "text",
+                    data: "Valid examples:"
+                },
+                {
+                    type: "code_block",
+                    data: "dragon.set(dragon.hexadecimal.00_cc_ff_ff)(rgba_color)\ndragon.set(dragon.hexadecimal.102030ac_d_)(random_value)"
+                },
+                {
+                    type: "header",
+                    data: "Boolean Literals"
+                },
+                {
+                    type: "text",
+                    data: "Booleans can either be written as true or false. No underscores allowed."
+                },
+                {
+                    type: "text",
+                    data: "Valid examples:"
+                },
+                {
+                    type: "code_block",
+                    data: "dragon.set(dragon.boolean.false)(variable_name_here)\ndragon.set(dragon.boolean.true)(variable_name_here)"
+                },
+                {
+                    type: "header",
+                    data: "Floating Point Literals"
+                },
+                {
+                    type: "text",
+                    data: "Apoligies, but they are not currently implemented. :("
                 }
             ]
         }
