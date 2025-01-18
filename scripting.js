@@ -81,7 +81,7 @@ let site_json = {
                 },
                 {
                     type: "header",
-                    data: "Basic Syntax"
+                    data: "Syntax"
                 },
                 {
                     type: "text",
@@ -109,14 +109,14 @@ let site_json = {
                 },
                 {
                     type: "code_block",
-                    data: "foo(a, b, c, d)()"
+                    data: "foo(a, b, c, d)()\nbar()(e, f)\noof(a, b)(c, d)\nbaz()()"
                 }
             ]
         },
         {
-            name: "documentation.home",
+            name: "documentation.functions.home",
             top_links: "normal",
-            left_links: "documentation",
+            left_links: "documentation.functions",
             content: [
                 {
                     type: "header",
@@ -124,7 +124,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon's built in structures and functions."
+                    data: "Dragon's built in functions."
                 },
                 {
                     type: "text",
@@ -133,9 +133,9 @@ let site_json = {
             ]
         },
         {
-            name: "documentation.structures",
+            name: "documentation.structures.home",
             top_links: "normal",
-            left_links: "documentation",
+            left_links: "documentation.structures",
             content: [
                 {
                     type: "header",
@@ -210,6 +210,53 @@ let site_json = {
                     data: "The dragon time structure is an integer representation of seconds and nanoseconds. This structure captures a point in time from a dragon function and can be subtracted and added to measure program execution time."
                 }
             ]
+        },
+        {
+            name: "documentation.function_calls.set",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "The 'dragon.set' Function Call"
+                },
+                {
+                    type: "text",
+                    data: "This function call is how hard coded numbers and buffers are written to variables."
+                },
+                {
+                    type: "text",
+                    data: "There are two types of setters. String setters and literal setters. String sets are just dragon style strings set to a buffer and literal sets are things like hex, binary and decimal value setting."
+                },
+                {
+                    type: "header",
+                    data: "String Setting"
+                },
+                {
+                    type: "text",
+                    data: "Strings are in the first argument of the statement inputs and their variable is in the first argument of the outputs."
+                },
+                {
+                    type: "text",
+                    data: "They are any text surrounded by double quotes like a typical string in most languages."
+                },
+                {
+                    type: "code_block",
+                    data: "dragon.set(\"This is a string, prepare yourselves for battle!\")(string_name)"
+                },
+                {
+                    type: "text",
+                    data: "The only thing about dragon strings is that there is no backslash escape sequences."
+                },
+                {
+                    type: "text",
+                    data: "Instead, Dragon allows the user to insert one or more hex valued bytes into the string using a percent sign, exactly two hex digits per byte and one semi colon."
+                },
+                {
+                    type: "code_block",
+                    data: "dragon.set(\"New line -> %0a;\")(string_variable)\ndragon.set(\"Manually inserting three tabs -> %09;%09;%09;\")"
+                }
+            ]
         }
     ],
     top_links: [
@@ -225,8 +272,12 @@ let site_json = {
                     page: "tutorial.home",
                 },
                 {
-                    text: "Documentation",
-                    page: "documentation.home"
+                    text: "Structures",
+                    page: "documentation.structures.home"
+                },
+                {
+                    text: "Functions",
+                    page: "documentation.functions.home"
                 },
                 {
                     text: "Links",
@@ -250,15 +301,24 @@ let site_json = {
             ]
         },
         {
-            name: "documentation",
+            name: "documentation.functions",
             content: [
                 {
                     text: "Home",
-                    page: "documentation.home"
+                    page: "documentation.functions.home"
                 },
                 {
-                    text: "Built In Structures",
-                    page: "documentation.structures"
+                    text: "dragon.set(value)(variable)",
+                    page: "documentation.function_calls.set"
+                }
+            ]
+        },
+        {
+            name: "documentation.structures",
+            content: [
+                {
+                    text: "Home",
+                    page: "documentation.structures.home"
                 }
             ]
         }
