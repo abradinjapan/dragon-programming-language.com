@@ -77,7 +77,11 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon is a scripting language designed primarily for compiler development. Although the language still lacks many features, the base of the language is mainly fleshed out. And I wish to create a tutorial around it."
+                    data: "Dragon is a scripting language designed primarily for compiler development. Although the language still lacks many features, the base of the language is mainly fleshed out."
+                },
+                {
+                    type: "text",
+                    data: "This page is a simple dragon tutorial, read on if you dare!"
                 },
                 {
                     type: "header",
@@ -85,31 +89,71 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon has what I like to call a statement centered syntax. In other words, the syntax revolves around a type of statement. The dragon call."
+                    data: "Dragon is designed to be syntactically very simple while retaining robust functionality. As it turns out, you actually don't need a lot of syntax to do almost everything a programming language can do. Contrary to many modern day languages."
                 },
                 {
                     type: "text",
-                    data: "A dragon call is a very simple form of function call that has one name and two sets of arguments. They are called like so:"
+                    data: "Dragon syntax is broken down into a few main categories: Statements, Functions and Structures."
                 },
                 {
-                    type: "code_block",
-                    data: "function_name(inputs)(outputs)"
-                },
-                {
-                    type: "text",
-                    data: "Names can be any combination of characters from the following regex:"
-                },
-                {
-                    type: "code_block",
-                    data: "[A-Za-z0-9_.]+"
+                    type: "header",
+                    data: "Statements"
                 },
                 {
                     type: "text",
-                    data: "Both the input and output arguments can have zero or more arguments separated by commas."
+                    data: "There are three types of statements in Dragon: Dragon calls, scopes and offsets. Dragon calls are the core of dragon syntax. They're very simple yet robust. Dragon calls are composed of three things: A name of the dragon function being called, zero or more input arguments & zero or more output arguments."
+                },
+                {
+                    type: "text",
+                    data: "Example:"
                 },
                 {
                     type: "code_block",
-                    data: "foo(a, b, c, d)()\nbar()(e, f)\noof(a, b)(c, d)\nbaz()()"
+                    data: "function_call_name(input_0, input_1, etc)(output_0, output_1, etc)"
+                },
+                {
+                    type: "text",
+                    data: "There are no semicolons needed at the end of a dragon call. There is also no separate variable declaration syntax."
+                },
+                {
+                    type: "text",
+                    data: "Variables in dragon are either declared or reused by writing their name in the output arguments of a Dragon call. This means that if a variable is already declared and is the correct type, it will be overwritten. If it is undeclared, it is declared there in the arguments with the name you give it and the type based on it's position in the function call. And if it's already taken with a different type, the compiler will return an error."
+                },
+                {
+                    type: "text",
+                    data: "It should also be noted that you can reuse variables from the input arguments in the output arguments. There is no restrictions when using a variable multiple times in either argument set."
+                },
+                {
+                    type: "header",
+                    data: "Function Declarations"
+                },
+                {
+                    type: "text",
+                    data: "All dragon function declarations have one name, one set of zero or more input arguments, one set of zero or more output arguments, an equals sign and then finally a scope with your code in it."
+                },
+                {
+                    type: "text",
+                    data: "An argument in a function declaration must have exactly one name and exactly one type denoted by an exclamation point. (More on types soon.)"
+                },
+                {
+                    type: "code_block",
+                    data: "function_name(input_0 !type, input_1 !type, input_2 !type, etc !type)(output_0 !type, output_1 !type) = {\n\t[ function body ]\n}"
+                },
+                {
+                    type: "text",
+                    data: "There are three types of statements that go inside functions: Dragon calls, Offsets & Scopes."
+                },
+                {
+                    type: "text",
+                    data: "Dragon calls are a very simple form of function call that have one name and two sets of arguments, equivalent to their declaration format. Except that they (usually) don't require an explicit type. They are called like so:"
+                },
+                {
+                    type: "code_block",
+                    data: "summon_dragon(name, ritual, caster)(spawn_point, new_powers)"
+                },
+                {
+                    type: "text",
+                    data: "Notice how the outputs don't have an explicit type. This is because outputs are assigned types based on the declaration that they conform to. In other words, variables are declared in outputs and those outputs' types will be assigned automatically."
                 }
             ]
         },
