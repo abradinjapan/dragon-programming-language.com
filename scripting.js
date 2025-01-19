@@ -377,6 +377,111 @@ let site_json = {
                     data: "Apoligies, but they are not currently implemented. :("
                 }
             ]
+        },
+        {
+            name: "documentation.function_calls.print.debug_cell",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.print.debug_cell(cell)()"
+                },
+                {
+                    type: "text",
+                    data: "This function prints a cell as an unsigned integer."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.character",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.print.character(cell)()"
+                },
+                {
+                    type: "text",
+                    data: "This function prints the first byte from a cell to the console."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.buffer_as_string",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.print.buffer_as_string(buffer)()"
+                },
+                {
+                    type: "text",
+                    data: "This function prints a buffer like a string."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.cell_as_binary",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.print.cell_as_binary(cell)()"
+                },
+                {
+                    type: "text",
+                    data: "This function prints a cell as a bunch of 64 bits."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.new_line",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.print.new_line()()"
+                },
+                {
+                    type: "text",
+                    data: "This function prints a new line to the console."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.tabs",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.print.tabs(tab_count)()"
+                },
+                {
+                    type: "text",
+                    data: "This function prints zero or more tab characters (0x09) as specified by tab_count."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.copy",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.copy(source)(destination)"
+                },
+                {
+                    type: "text",
+                    data: "This function copies one structure from the source to the destination. Any type is valid as long as both types are the same."
+                }
+            ]
         }
     ],
     top_links: [
@@ -430,6 +535,34 @@ let site_json = {
                 {
                     text: "dragon.set(value)(variable)",
                     page: "documentation.function_calls.set"
+                },
+                {
+                    text: "dragon.print.debug_cell(value)()",
+                    page: "documentation.function_calls.print.debug_cell"
+                },
+                {
+                    text: "dragon.print.character(character)()",
+                    page: "documentation.function_calls.print.character"
+                },
+                {
+                    text: "dragon.print.buffer_as_string(buffer)()",
+                    page: "documentation.function_calls.print.buffer_as_string"
+                },
+                {
+                    text: "dragon.print.cell_as_binary(cell)()",
+                    page: "documentation.function_calls.print.cell_as_binary"
+                },
+                {
+                    text: "dragon.print.new_line()()",
+                    page: "documentation.function_calls.print.new_line"
+                },
+                {
+                    text: "dragon.print.tabs(tab_count)()",
+                    page: "documentation.function_calls.print.tabs"
+                },
+                {
+                    text: "dragon.copy(source)(destination)",
+                    page: "documentation.function_calls.copy"
                 }
             ]
         },
