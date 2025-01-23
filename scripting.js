@@ -664,17 +664,92 @@ let site_json = {
             ]
         },
         {
-            name: "documentation.function_calls.",
+            name: "documentation.function_calls.integer.add",
             top_links: "normal",
             left_links: "documentation.functions",
             content: [
                 {
                     type: "header",
-                    data: "dragon.()()"
+                    data: "dragon.integer.add(var_1, var_2)(result)"
                 },
                 {
                     type: "text",
-                    data: "This function"
+                    data: "This function adds the two input variables and returns the result."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.subtract",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.integer.subtract(var_1, var_2)(result)"
+                },
+                {
+                    type: "text",
+                    data: "This function subtracts the two input variables and returns the result."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.multiply",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.integer.multiply(var_1, var_2)(result)"
+                },
+                {
+                    type: "text",
+                    data: "This function multiplys the two input variables and returns the result."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.divide",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.integer.divide(numerator, denomimator)(difference)"
+                },
+                {
+                    type: "text",
+                    data: "This function divides the two input variables and returns the difference."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.modulous",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.integer.modulous(value, modulous_by)(remainder)"
+                },
+                {
+                    type: "text",
+                    data: "This function modulos the two input variables and returns the remainder."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.within_range",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.integer.within_range(lower_bound, checking_against, upper_bound, invert_result)(boolean)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes the value 'checking_against' and determines if it falls in the integer range of 'lower_bound' & 'upper_bound'. Invert will invert the resulting boolean depending on its value (true is invert, false is not-inverted). The cell 'boolean' is the result."
                 }
             ]
         }
@@ -806,6 +881,30 @@ let site_json = {
                 {
                     text: "dragon.bits.overwrite",
                     page: "documentation.function_calls.bits.overwrite"
+                },
+                {
+                    text: "dragon.integer.add",
+                    page: "documentation.function_calls.integer.add"
+                },
+                {
+                    text: "dragon.integer.subtract",
+                    page: "documentation.function_calls.integer.subtract"
+                },
+                {
+                    text: "dragon.integer.multiply",
+                    page: "documentation.function_calls.integer.multiply"
+                },
+                {
+                    text: "dragon.integer.divide",
+                    page: "documentation.function_calls.integer.divide"
+                },
+                {
+                    text: "dragon.integer.modulous",
+                    page: "documentation.function_calls.integer.modulous"
+                },
+                {
+                    text: "dragon.integer.within_range",
+                    page: "documentation.function_calls.integer.within_range"
                 }
             ]
         },
@@ -831,6 +930,12 @@ function generate_header(text) {
 function generate_text(text) {
     // build code
     return ("<div class=\"page_document_text\">" + text + "</div>");
+}
+
+// write text
+function generate_text_bold(text) {
+    // build code
+    return ("<div class=\"page_document_text\"><b>" + text + "</b></div>");
 }
 
 // write code block
@@ -887,6 +992,10 @@ function generate_document(json) {
             break;
         case "text":
             output += generate_text(current_content.data);
+
+            break;
+        case "bold":
+            output += generate_text_bold(current_content.data);
 
             break;
         case "code_block":
