@@ -482,6 +482,51 @@ let site_json = {
                     data: "This function copies one structure from the source to the destination. Any type is valid as long as both types are the same."
                 }
             ]
+        },
+        {
+            name: "documentation.function_calls.pack",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.pack(var_1, var_2, [maybe more variables])(destination !desired_type)"
+                },
+                {
+                    type: "text",
+                    data: "This function creates one structure variable of any type by 'packing' all input variables into the output variable. Please note that the '!desired_type' is mandatory for determining what type is being packed."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.pack_null",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.pack.null()(destination !desired_type)"
+                },
+                {
+                    type: "text",
+                    data: "This function creates one structure variable of any type by 'packing' all zeros into the output variable. Please note that the '!desired_type' is mandatory for determining what type is being packed."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.()()"
+                },
+                {
+                    type: "text",
+                    data: "This function"
+                }
+            ]
         }
     ],
     top_links: [
@@ -533,36 +578,44 @@ let site_json = {
                     page: "documentation.functions.home"
                 },
                 {
-                    text: "dragon.set(value)(variable)",
+                    text: "dragon.set",
                     page: "documentation.function_calls.set"
                 },
                 {
-                    text: "dragon.print.debug_cell(value)()",
+                    text: "dragon.print.debug_cell",
                     page: "documentation.function_calls.print.debug_cell"
                 },
                 {
-                    text: "dragon.print.character(character)()",
+                    text: "dragon.print.character",
                     page: "documentation.function_calls.print.character"
                 },
                 {
-                    text: "dragon.print.buffer_as_string(buffer)()",
+                    text: "dragon.print.buffer_as_string",
                     page: "documentation.function_calls.print.buffer_as_string"
                 },
                 {
-                    text: "dragon.print.cell_as_binary(cell)()",
+                    text: "dragon.print.cell_as_binary",
                     page: "documentation.function_calls.print.cell_as_binary"
                 },
                 {
-                    text: "dragon.print.new_line()()",
+                    text: "dragon.print.new_line",
                     page: "documentation.function_calls.print.new_line"
                 },
                 {
-                    text: "dragon.print.tabs(tab_count)()",
+                    text: "dragon.print.tabs",
                     page: "documentation.function_calls.print.tabs"
                 },
                 {
-                    text: "dragon.copy(source)(destination)",
+                    text: "dragon.copy",
                     page: "documentation.function_calls.copy"
+                },
+                {
+                    text: "dragon.pack",
+                    page: "documentation.function_calls.pack"
+                },
+                {
+                    text: "dragon.pack.null",
+                    page: "documentation.function_calls.pack_null"
                 }
             ]
         },
