@@ -514,6 +514,156 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.jump",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.jump(condition, @offset)()"
+                },
+                {
+                    type: "text",
+                    data: "This function jumps conditionally from the current instruction to the offset specified. The condition is zero (false) against jumping and any other value for jumping (true)."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.jump_top",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.jump.top(condition, @named_scope)()"
+                },
+                {
+                    type: "text",
+                    data: "This function jumps conditionally from the current instruction to the first instruction of the named scope specified. The condition is zero (false) against jumping and any other value for jumping (true)."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.jump_bottom",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.jump.bottom(condition, @named_scope)()"
+                },
+                {
+                    type: "text",
+                    data: "This function jumps conditionally from the current instruction to the next instruction after the end of the named scope specified. The condition is zero (false) against jumping and any other value for jumping (true)."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.or",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.or(var_1, var_2)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes all bits in the two given cells and outputs a binary 'or' operation."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.and",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.and(var_1, var_2)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes all bits in the two given cells and outputs a binary 'and' operation."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.xor",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.xor(var_1, var_2)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes all bits in the two given cells and outputs a binary 'xor' operation."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.shift_higher",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.shift_higher(value, shift_by)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes the cell 'value' and shifts it up to higher bits by 'shift_by' amount."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.shift_lower",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.shift_lower(value, shift_by)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes the cell 'value' and shifts it down to lower bits by 'shift_by' amount."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.invert",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.invert(input)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function takes the cell 'input' and inverts all bits into 'output'."
+                }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.overwrite",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                {
+                    type: "header",
+                    data: "dragon.bits.overwrite(mask, old_bits, new_bits)(output)"
+                },
+                {
+                    type: "text",
+                    data: "This function allows you to selectively overwrite bits specified by the 'mask'. The 'new_bits' selected by 'mask' overwrite the binary digit places of the 'old_bits' selected by 'mask'. Positive 'mask' bits are overwritten and negative bits remain the same."
+                }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
@@ -616,6 +766,46 @@ let site_json = {
                 {
                     text: "dragon.pack.null",
                     page: "documentation.function_calls.pack_null"
+                },
+                {
+                    text: "dragon.jump",
+                    page: "documentation.function_calls.jump"
+                },
+                {
+                    text: "dragon.jump.bottom",
+                    page: "documentation.function_calls.jump_bottom"
+                },
+                {
+                    text: "dragon.jump.top",
+                    page: "documentation.function_calls.jump_top"
+                },
+                {
+                    text: "dragon.bits.or",
+                    page: "documentation.function_calls.bits.or"
+                },
+                {
+                    text: "dragon.bits.and",
+                    page: "documentation.function_calls.bits.and"
+                },
+                {
+                    text: "dragon.bits.xor",
+                    page: "documentation.function_calls.bits.xor"
+                },
+                {
+                    text: "dragon.bits.shift_higher",
+                    page: "documentation.function_calls.bits.shift_higher"
+                },
+                {
+                    text: "dragon.bits.shift_lower",
+                    page: "documentation.function_calls.bits.shift_lower"
+                },
+                {
+                    text: "dragon.bits.invert",
+                    page: "documentation.function_calls.bits.invert"
+                },
+                {
+                    text: "dragon.bits.overwrite",
+                    page: "documentation.function_calls.bits.overwrite"
                 }
             ]
         },
