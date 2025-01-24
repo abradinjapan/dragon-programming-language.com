@@ -376,7 +376,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Apologies, but they are not currently implemented. :("
+                    data: "Apologies, but they are not yet implemented in dragon. :("
                 }
             ]
         },
@@ -389,13 +389,11 @@ let site_json = {
                     type: "function_documentation",
                     data: {
                         name: "dragon.print.debug_cell",
-                        inputs: [ "value (literal)" ],
-                        outputs: [],
-                        description: [
-                            { type: "text", data: "This function prints a cell as an unsigned integer." }
-                        ]
+                        inputs: [ "cell !dragon.cell" ],
+                        outputs: []
                     }
-                }
+                },
+                { type: "text", data: "This function prints a cell as an unsigned integer." }
             ]
         },
         {
@@ -404,13 +402,14 @@ let site_json = {
             left_links: "documentation.functions",
             content: [
                 {
-                    type: "header",
-                    data: "dragon.print.character(cell)()"
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.print.character",
+                        inputs: [ "character !dragon.cell" ],
+                        outputs: [],
+                    }
                 },
-                {
-                    type: "text",
-                    data: "This function prints the first byte from a cell to the console."
-                }
+                { type: "text", data: "This function prints the first byte from a cell to the console." }
             ]
         },
         {
@@ -937,13 +936,7 @@ function generate_text(text) {
     return ("<div class=\"page_document_text\">" + text + "</div>");
 }
 
-// write one type
-function generate_type(type) {
-    // build code
-    return ("<div class=\"page_document_text\"><b>" + type + "</b></div>");
-}
-
-// write multiple types
+/*// write multiple types
 function generate_types(type_array) {
     // build code
     output = ""
@@ -952,7 +945,7 @@ function generate_types(type_array) {
     if (type_array.length > 0) { 
         // build each slot
         for (let type_index = 0; type_index < type_array.length; type_index++) {
-            output += generate_type(type_array[type_index]);
+            output += generate_text(type_array[type_index]);
         }
     // no types
     } else {
@@ -960,7 +953,7 @@ function generate_types(type_array) {
     }
 
     return output;
-}
+} */
 
 // write code block
 function generate_code_block(text) {
@@ -998,6 +991,44 @@ function generate_internal_video(link) {
     return ("<div class=\"page_document_text\"><video class=\"page_document_video\"src=\"" + link + "\"controls></video></div>");
 }
 
+function generate_dragon_function_call_arguments(arguments) {
+    // setup output
+    text = "(";
+
+    // for each argument
+    for (let index = 0; index < arguments.length; index++) {
+        // check for comma
+        if (index > 0) {
+            // add comma
+            text += ", ";
+        }
+
+        // add argument
+        text += arguments[index];
+    }
+
+    // append closing bracket
+    text += ")";
+
+    return text;
+}
+
+// write a dragon function call
+function generate_dragon_function_call(json_data) {
+    // setup text
+    text = "";
+
+    // write name
+    text += json_data.name;
+
+    // write arguments
+    text += generate_dragon_function_call_arguments(json_data.inputs);
+    text += generate_dragon_function_call_arguments(json_data.outputs);
+
+    // assemble and return code
+    return generate_code_block(text);
+}
+
 // generate main document
 function generate_main_text(content) {
     var output = "";
@@ -1019,14 +1050,9 @@ function generate_main_text(content) {
 
             break;
         case "function_documentation":
-            output += generate_header("Name");
-            output += generate_text(current_content.data.name);
-            output += generate_header("Inputs");
-            output += generate_types(current_content.data.inputs);
-            output += generate_header("Outputs");
-            output += generate_types(current_content.data.outputs);
+            output += generate_header("Valid Configurations");
+            output += generate_dragon_function_call(current_content.data);
             output += generate_header("Description");
-            output += generate_main_text(current_content.data.description);
 
             break;
         case "code_block":
