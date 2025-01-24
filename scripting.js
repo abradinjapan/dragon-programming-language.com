@@ -1137,6 +1137,96 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.list.open",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.open",
+                        inputs: [ "increase !dragon.cell" ],
+                        outputs: [ "list !dragon.list" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a byte length (increase) and opens a list starting at that size." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.close",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.close",
+                        inputs: [ "list !dragon.list" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function deallocates and closes a list." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.calculate.content_buffer",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.calculate.content_buffer",
+                        inputs: [ "list !dragon.list" ],
+                        outputs: [ "content_buffer !dragon.buffer" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a list and returns a buffer that points the the start of the list up to the fill point." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.append.structure",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.append.structure",
+                        inputs: [ "list !dragon.list", "structure ![any_type]" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a list and appends a structure to the end of it." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.append.buffer",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.append.buffer",
+                        inputs: [ "list !dragon.list", "data !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function appends the contents of a buffer to the end of list." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
