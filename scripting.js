@@ -1227,6 +1227,96 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.compiler.compile",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.compiler.compile",
+                        inputs: [ "code_buffers_buffer !dragon.buffer", "debug_enabled !dragon.cell", "generate_kickstarter !dragon.cell" ],
+                        outputs: [ "anvil_program !dragon.buffer", "debug_information !dragon.buffer", "error_occured !dragon.cell", "error_message !dragon.buffer", "error_location_file_index !dragon.cell", "error_location_line_number !dragon.cell", "error_location_character_index !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a buffer of buffers, along with a few settings, and compiles dragon code to anvil binary code. It also returns some error information." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.context.open",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.context.open",
+                        inputs: [],
+                        outputs: [ "context !dragon.buffer" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function allocates a new context." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.context.install_program",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.context.install_program",
+                        inputs: [ "context !dragon.buffer", "program !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function sets up an anvil program in the desired context." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.context.run",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.context.run",
+                        inputs: [ "context !dragon.buffer", "instruction_run_count !dragon.cell" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function will run a specified amount of instructions pertaining the the installed program in the given context. To run forever, pass -1 (dragon.integer.n1)." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.time.now",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.time.now",
+                        inputs: [],
+                        outputs: [ "time !dragon.time" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function returns the current time." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
