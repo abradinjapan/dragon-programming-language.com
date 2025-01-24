@@ -733,6 +733,116 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.integer.add",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.integer.add",
+                        inputs: [ "a !dragon.cell", "b !dragon.cell" ],
+                        outputs: [ "output !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function adds two integers." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.subtract",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.integer.subtract",
+                        inputs: [ "a !dragon.cell", "b !dragon.cell" ],
+                        outputs: [ "output !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function subtracts two integers." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.multiply",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.integer.multiply",
+                        inputs: [ "a !dragon.cell", "b !dragon.cell" ],
+                        outputs: [ "output !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function multiplies two integers." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.divide",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.integer.divide",
+                        inputs: [ "numerator !dragon.cell", "denominator !dragon.cell" ],
+                        outputs: [ "output !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function divides two integers." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.modulous",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.integer.modulous",
+                        inputs: [ "value !dragon.cell", "mod_by !dragon.cell" ],
+                        outputs: [ "remainder !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function does an integer modulous." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.integer.within_range",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.integer.within_range",
+                        inputs: [ "lower_bound !dragon.cell", "value !dragon.cell", "upper_bound !dragon.cell", "invert !dragon.cell" ],
+                        outputs: [ "output_boolean !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function checks whether or not an integer (value) is within the range specified." },
+                { type: "text", data: "(lower_bound <= value) && (value <= upper_bound)." },
+                { type: "text", data: "'invert' will invert 'output_boolean' if not zero." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
