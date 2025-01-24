@@ -935,6 +935,208 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.address_to_cell",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.address_to_cell",
+                        inputs: [ "address !dragon.cell", "byte_count !dragon.cell" ],
+                        outputs: [ "cell !dragon.cell", "advancement !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a pointer and a byte count (max is 8) and reads that into a variable." },
+                { type: "text", data: "'advancement' is the following address after the read is done. Not really necessary, just convenient." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.cell_to_address",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.cell_to_address",
+                        inputs: [ "cell !dragon.cell", "byte_count !dragon.cell", "address !dragon.cell" ],
+                        outputs: [ "advancement !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a cell and writes 'byte_count' amount of bytes (max of 8) to the specified 'address'." },
+                { type: "text", data: "'advancement' is the following address after the write is done." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.file_to_buffer",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.file_to_buffer",
+                        inputs: [ "file_path !dragon.buffer" ],
+                        outputs: [ "file_data !dragon.buffer" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a file path, finds a file and gets all of it's contents into a single buffer." },
+                { type: "text", data: "The buffer will be zeroed upon failure and appending a null to the string isn't necessary as the language will do it for you when this instruction is called." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer_to_file",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer_to_file",
+                        inputs: [ "file_data !dragon.buffer", "file_path !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a buffer and creates / remakes a file with said buffer. The original file is deleted and the new one replaces it." },
+                { type: "text", data: "Appending a null to the string isn't necessary as the language will do it for you when this instruction is called." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer.copy.low_to_high",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer.copy.low_to_high",
+                        inputs: [ "source !dragon.buffer", "destination !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function copies a buffer from the lowest address to the highest address. Please note that both buffers need to be allocated and MUST be the exact same length." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer.copy.high_to_low",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer.copy.high_to_low",
+                        inputs: [ "source !dragon.buffer", "destination !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function copies a buffer from the highest address to the lowest address. Please note that both buffers need to be allocated and MUST be the exact same length." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.delete_file",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.delete_file",
+                        inputs: [ "file_path !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function deletes a file from a given file path. Please note that appending null to the file path string is taken care of for you in this instruction." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.current.within_range",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.current.within_range",
+                        inputs: [ "current !dragon.current", "invert !dragon.cell" ],
+                        outputs: [ "boolean !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a current structure and check whether or not its valid or not. 'invert' inverts the resulting flag if not set to zero. 'boolean' is the resulting boolean." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.structure_to_buffer",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.structure_to_buffer",
+                        inputs: [ "structure ![any_type]", "destination_buffer !dragon.buffer" ],
+                        outputs: [ "advancement !dragn.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a structure of any type and writes it to a buffer. Please note that the buffer's size MUST match the size in bytes of the given structure." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer_to_structure",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer_to_structure",
+                        inputs: [ "buffer !dragon.buffer" ],
+                        outputs: [ "structure ![any_type]" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a buffer and makes a structure of a specified type. Please note that the buffer's size MUST match the size in bytes of the given structure." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.structure.byte_size",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.structure.byte_size",
+                        inputs: [ "structure ![any_type]" ],
+                        outputs: [ "byte_size !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes any structure and returns its size in bytes." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
