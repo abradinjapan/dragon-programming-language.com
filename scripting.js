@@ -385,6 +385,7 @@ let site_json = {
             top_links: "normal",
             left_links: "documentation.functions",
             content: [
+                { type: "header", data: "Valid Configurations" },
                 {
                     type: "function_documentation",
                     data: {
@@ -393,6 +394,7 @@ let site_json = {
                         outputs: []
                     }
                 },
+                { type: "header", data: "Description" },
                 { type: "text", data: "This function prints a cell as an unsigned integer." }
             ]
         },
@@ -401,6 +403,7 @@ let site_json = {
             top_links: "normal",
             left_links: "documentation.functions",
             content: [
+                { type: "header", data: "Valid Configurations" },
                 {
                     type: "function_documentation",
                     data: {
@@ -409,6 +412,7 @@ let site_json = {
                         outputs: [],
                     }
                 },
+                { type: "header", data: "Description" },
                 { type: "text", data: "This function prints the first byte from a cell to the console." }
             ]
         },
@@ -417,6 +421,7 @@ let site_json = {
             top_links: "normal",
             left_links: "documentation.functions",
             content: [
+                { type: "header", data: "Valid Configurations" },
                 {
                     type: "function_documentation",
                     data: {
@@ -425,7 +430,306 @@ let site_json = {
                         outputs: [],
                     }
                 },
+                { type: "header", data: "Description" },
                 { type: "text", data: "This function prints the first byte from a cell to the console." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.cell_as_binary",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.print.cell_as_binary",
+                        inputs: [ "cell !dragon.cell" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function prints the full 64 bits of a cell to the console." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.new_line",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.print.new_line",
+                        inputs: [],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function prints one new line to the console." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.print.tabs",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.print.tabs",
+                        inputs: [ "tab_count !dragon.cell" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function print the specified amount of tabs (ascii: 0x09)." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.copy",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.copy",
+                        inputs: [ "any_variable !(any_type)" ],
+                        outputs: [ "any_variable !(any_type)" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function copies one of any variable to one of equivalent type." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.pack",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.pack",
+                        inputs: [ "structure_member_1 !(any_type)", "structure_member_2 !(any_type)", "...", "structure_member_N !(any_type)" ],
+                        outputs: [ "destination !(designated_type)" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function is used to 'pack' variables into one type of variable." },
+                { type: "text", data: "The inputs should contain the correct amount, the correct types and be in order of the type specified." },
+                { type: "text", data: "The variable type and destination is the one variable in the outputs." },
+                { type: "text", data: "'!(designated_type)' is the type you want the data to pack into." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.pack.null",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.pack.null",
+                        inputs: [],
+                        outputs: [ "destination !(designated_type)" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function sets all cells of all members of a variable to be zero." },
+                { type: "text", data: "'!(designated_type)' is the type you want the zeros to pack into." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.jump",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.jump",
+                        inputs: [ "condition !dragon.cell", "@offset_name" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function jumps to a specified offset in the current function." },
+                { type: "text", data: "If the condition is zero, the function doesn't jump." },
+                { type: "text", data: "If the condition is anything else, the function will jump." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.jump.bottom",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.jump.bottom",
+                        inputs: [ "condition !dragon.cell", "@named_scope_name" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function jumps to the instruction directly after a scope in the current function. It basically exits the scope." },
+                { type: "text", data: "If the condition is zero, the function doesn't jump." },
+                { type: "text", data: "If the condition is anything else, the function will jump." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.jump.top",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.jump.top",
+                        inputs: [ "condition !dragon.cell", "@named_scope_name" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function jumps to the conditional check of the specified named scope in the current function. AKA, it goes to the start." },
+                { type: "text", data: "If the condition is zero, the function doesn't jump." },
+                { type: "text", data: "If the condition is anything else, the function will jump." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.or",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.or",
+                        inputs: [ "a !dragon.cell", "b !dragon.cell" ],
+                        outputs: [ "result !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function does a binary or on two variables and returns the result." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.and",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.and",
+                        inputs: [ "a !dragon.cell", "b !dragon.cell" ],
+                        outputs: [ "result !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function does a binary and, and returns the result." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.xor",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.xor",
+                        inputs: [ "a !dragon.cell", "b !dragon.cell" ],
+                        outputs: [ "result !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function does a binary xor and returns the result." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.shift_higher",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.shift_higher",
+                        inputs: [ "data !dragon.cell", "shift_by !dragon.cell" ],
+                        outputs: [ "result !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function does a bit shift towards the higher bit values." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.shift_lower",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.shift_lower",
+                        inputs: [ "data !dragon.cell", "shift_by !dragon.cell" ],
+                        outputs: [ "result !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function does a bit shift towards the lower bit values." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.bits.overwrite",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.overwrite",
+                        inputs: [ "mask !dragon.cell", "old_bits !dragon.cell", "new_bits !dragon.cell" ],
+                        outputs: [ "result !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function only copies the bits from the old cell to the new cell that are set to true in the mask." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.",
+                        inputs: [],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function" }
             ]
         }
     ],
@@ -515,7 +819,7 @@ let site_json = {
                 },
                 {
                     text: "dragon.pack.null",
-                    page: "documentation.function_calls.pack_null"
+                    page: "documentation.function_calls.pack.null"
                 },
                 {
                     text: "dragon.jump",
@@ -523,11 +827,11 @@ let site_json = {
                 },
                 {
                     text: "dragon.jump.bottom",
-                    page: "documentation.function_calls.jump_bottom"
+                    page: "documentation.function_calls.jump.bottom"
                 },
                 {
                     text: "dragon.jump.top",
-                    page: "documentation.function_calls.jump_top"
+                    page: "documentation.function_calls.jump.top"
                 },
                 {
                     text: "dragon.bits.or",
@@ -825,9 +1129,7 @@ function generate_main_text(content) {
 
             break;
         case "function_documentation":
-            output += generate_header("Valid Configurations");
             output += generate_dragon_function_call(current_content.data);
-            output += generate_header("Description");
 
             break;
         case "code_block":
