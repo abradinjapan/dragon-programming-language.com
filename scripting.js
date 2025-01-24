@@ -1,3 +1,5 @@
+let website;
+
 let site_json = {
     pages: [
         {
@@ -374,7 +376,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Apoligies, but they are not currently implemented. :("
+                    data: "Apologies, but they are not currently implemented. :("
                 }
             ]
         },
@@ -384,12 +386,15 @@ let site_json = {
             left_links: "documentation.functions",
             content: [
                 {
-                    type: "header",
-                    data: "dragon.print.debug_cell(cell)()"
-                },
-                {
-                    type: "text",
-                    data: "This function prints a cell as an unsigned integer."
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.print.debug_cell",
+                        inputs: [ "value (literal)" ],
+                        outputs: [],
+                        description: [
+                            { type: "text", data: "This function prints a cell as an unsigned integer." }
+                        ]
+                    }
                 }
             ]
         },
@@ -932,10 +937,29 @@ function generate_text(text) {
     return ("<div class=\"page_document_text\">" + text + "</div>");
 }
 
-// write text
-function generate_text_bold(text) {
+// write one type
+function generate_type(type) {
     // build code
-    return ("<div class=\"page_document_text\"><b>" + text + "</b></div>");
+    return ("<div class=\"page_document_text\"><b>" + type + "</b></div>");
+}
+
+// write multiple types
+function generate_types(type_array) {
+    // build code
+    output = ""
+
+    // check for types count
+    if (type_array.length > 0) { 
+        // build each slot
+        for (let type_index = 0; type_index < type_array.length; type_index++) {
+            output += generate_type(type_array[type_index]);
+        }
+    // no types
+    } else {
+        output = generate_text("[ none ]");
+    }
+
+    return output;
 }
 
 // write code block
@@ -975,14 +999,14 @@ function generate_internal_video(link) {
 }
 
 // generate main document
-function generate_document(json) {
+function generate_main_text(content) {
     var output = "";
     var current_content;
 
     // write pieces in order
-    for (var i = 0; i < json.content.length; i++) {
+    for (var i = 0; i < content.length; i++) {
         // get content
-        current_content = json.content[i];
+        current_content = content[i];
 
         // write html
         switch (current_content.type) {
@@ -994,8 +1018,15 @@ function generate_document(json) {
             output += generate_text(current_content.data);
 
             break;
-        case "bold":
-            output += generate_text_bold(current_content.data);
+        case "function_documentation":
+            output += generate_header("Name");
+            output += generate_text(current_content.data.name);
+            output += generate_header("Inputs");
+            output += generate_types(current_content.data.inputs);
+            output += generate_header("Outputs");
+            output += generate_types(current_content.data.outputs);
+            output += generate_header("Description");
+            output += generate_main_text(current_content.data.description);
 
             break;
         case "code_block":
@@ -1018,6 +1049,11 @@ function generate_document(json) {
     }
 
     return output;
+}
+
+// generate website
+function generate_document(json) {
+    return generate_main_text(json.content);
 }
 
 // generate top navigation
