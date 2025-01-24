@@ -715,6 +715,24 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.bits.invert",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.bits.invert",
+                        inputs: [ "source !dragon.cell" ],
+                        outputs: [ "destination !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function inverts all the bits in one cell." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
