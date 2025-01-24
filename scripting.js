@@ -418,343 +418,14 @@ let site_json = {
             left_links: "documentation.functions",
             content: [
                 {
-                    type: "header",
-                    data: "dragon.print.buffer_as_string(buffer)()"
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.print.buffer_as_string",
+                        inputs: [ "character !dragon.cell" ],
+                        outputs: [],
+                    }
                 },
-                {
-                    type: "text",
-                    data: "This function prints a buffer like a string."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.print.cell_as_binary",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.print.cell_as_binary(cell)()"
-                },
-                {
-                    type: "text",
-                    data: "This function prints a cell as a bunch of 64 bits."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.print.new_line",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.print.new_line()()"
-                },
-                {
-                    type: "text",
-                    data: "This function prints a new line to the console."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.print.tabs",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.print.tabs(tab_count)()"
-                },
-                {
-                    type: "text",
-                    data: "This function prints zero or more tab characters (0x09) as specified by tab_count."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.copy",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.copy(source)(destination)"
-                },
-                {
-                    type: "text",
-                    data: "This function copies one structure from the source to the destination. Any type is valid as long as both types are the same."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.pack",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.pack(var_1, var_2, [maybe more variables])(destination !desired_type)"
-                },
-                {
-                    type: "text",
-                    data: "This function creates one structure variable of any type by 'packing' all input variables into the output variable. Please note that the '!desired_type' is mandatory for determining what type is being packed."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.pack_null",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.pack.null()(destination !desired_type)"
-                },
-                {
-                    type: "text",
-                    data: "This function creates one structure variable of any type by 'packing' all zeros into the output variable. Please note that the '!desired_type' is mandatory for determining what type is being packed."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.jump",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.jump(condition, @offset)()"
-                },
-                {
-                    type: "text",
-                    data: "This function jumps conditionally from the current instruction to the offset specified. The condition is zero (false) against jumping and any other value for jumping (true)."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.jump_top",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.jump.top(condition, @named_scope)()"
-                },
-                {
-                    type: "text",
-                    data: "This function jumps conditionally from the current instruction to the first instruction of the named scope specified. The condition is zero (false) against jumping and any other value for jumping (true)."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.jump_bottom",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.jump.bottom(condition, @named_scope)()"
-                },
-                {
-                    type: "text",
-                    data: "This function jumps conditionally from the current instruction to the next instruction after the end of the named scope specified. The condition is zero (false) against jumping and any other value for jumping (true)."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.or",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.or(var_1, var_2)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes all bits in the two given cells and outputs a binary 'or' operation."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.and",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.and(var_1, var_2)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes all bits in the two given cells and outputs a binary 'and' operation."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.xor",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.xor(var_1, var_2)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes all bits in the two given cells and outputs a binary 'xor' operation."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.shift_higher",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.shift_higher(value, shift_by)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes the cell 'value' and shifts it up to higher bits by 'shift_by' amount."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.shift_lower",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.shift_lower(value, shift_by)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes the cell 'value' and shifts it down to lower bits by 'shift_by' amount."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.invert",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.invert(input)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes the cell 'input' and inverts all bits into 'output'."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.bits.overwrite",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.bits.overwrite(mask, old_bits, new_bits)(output)"
-                },
-                {
-                    type: "text",
-                    data: "This function allows you to selectively overwrite bits specified by the 'mask'. The 'new_bits' selected by 'mask' overwrite the binary digit places of the 'old_bits' selected by 'mask'. Positive 'mask' bits are overwritten and negative bits remain the same."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.integer.add",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.integer.add(var_1, var_2)(result)"
-                },
-                {
-                    type: "text",
-                    data: "This function adds the two input variables and returns the result."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.integer.subtract",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.integer.subtract(var_1, var_2)(result)"
-                },
-                {
-                    type: "text",
-                    data: "This function subtracts the two input variables and returns the result."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.integer.multiply",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.integer.multiply(var_1, var_2)(result)"
-                },
-                {
-                    type: "text",
-                    data: "This function multiplys the two input variables and returns the result."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.integer.divide",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.integer.divide(numerator, denomimator)(difference)"
-                },
-                {
-                    type: "text",
-                    data: "This function divides the two input variables and returns the difference."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.integer.modulous",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.integer.modulous(value, modulous_by)(remainder)"
-                },
-                {
-                    type: "text",
-                    data: "This function modulos the two input variables and returns the remainder."
-                }
-            ]
-        },
-        {
-            name: "documentation.function_calls.integer.within_range",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                {
-                    type: "header",
-                    data: "dragon.integer.within_range(lower_bound, checking_against, upper_bound, invert_result)(boolean)"
-                },
-                {
-                    type: "text",
-                    data: "This function takes the value 'checking_against' and determines if it falls in the integer range of 'lower_bound' & 'upper_bound'. Invert will invert the resulting boolean depending on its value (true is invert, false is not-inverted). The cell 'boolean' is the result."
-                }
+                { type: "text", data: "This function prints the first byte from a cell to the console." }
             ]
         }
     ],
@@ -909,6 +580,110 @@ let site_json = {
                 {
                     text: "dragon.integer.within_range",
                     page: "documentation.function_calls.integer.within_range"
+                },
+                {
+                    text: "dragon.buffer.request",
+                    page: "documentation.function_calls.buffer.request"
+                },
+                {
+                    text: "dragon.buffer.return",
+                    page: "documentation.function_calls.buffer.return"
+                },
+                {
+                    text: "dragon.buffer.calculate.length",
+                    page: "documentation.function_calls.buffer.calculate.length"
+                },
+                {
+                    text: "dragon.buffer.calculate.end_address",
+                    page: "documentation.function_calls.buffer.calculate.end_address"
+                },
+                {
+                    text: "dragon.buffer.calculate.start_address",
+                    page: "documentation.function_calls.buffer.calculate.start_address"
+                },
+                {
+                    text: "dragon.address_to_cell",
+                    page: "documentation.function_calls.address_to_cell"
+                },
+                {
+                    text: "dragon.cell_to_address",
+                    page: "documentation.function_calls.cell_to_address"
+                },
+                {
+                    text: "dragon.file_to_buffer",
+                    page: "documentation.function_calls.file_to_buffer"
+                },
+                {
+                    text: "dragon.buffer_to_file",
+                    page: "documentation.function_calls.buffer_to_file"
+                },
+                {
+                    text: "dragon.buffer.copy.low_to_high",
+                    page: "documentation.function_calls.buffer.copy.low_to_high"
+                },
+                {
+                    text: "dragon.buffer.copy.high_to_low",
+                    page: "documentation.function_calls.buffer.copy.high_to_low"
+                },
+                {
+                    text: "dragon.delete_file",
+                    page: "documentation.function_calls.delete_file"
+                },
+                {
+                    text: "dragon.current.within_range",
+                    page: "documentation.function_calls.current.within_range"
+                },
+                {
+                    text: "dragon.structure_to_buffer",
+                    page: "documentation.function_calls.structure_to_buffer"
+                },
+                {
+                    text: "dragon.buffer_to_structure",
+                    page: "documentation.function_calls.buffer_to_structure"
+                },
+                {
+                    text: "dragon.structure.byte_size",
+                    page: "documentation.function_calls.structure.byte_size"
+                },
+                {
+                    text: "dragon.list.open",
+                    page: "documentation.function_calls.list.open"
+                },
+                {
+                    text: "dragon.list.close",
+                    page: "documentation.function_calls.list.close"
+                },
+                {
+                    text: "dragon.list.calculate.content_buffer",
+                    page: "documentation.function_calls.list.calculate.content_buffer"
+                },
+                {
+                    text: "dragon.list.append.structure",
+                    page: "documentation.function_calls.list.append.structure"
+                },
+                {
+                    text: "dragon.list.append.buffer",
+                    page: "documentation.function_calls.list.append.buffer"
+                },
+                {
+                    text: "dragon.compiler.compile",
+                    page: "documentation.function_calls.compiler.compile"
+                },
+                {
+                    text: "dragon.context.open",
+                    page: "documentation.function_calls.context.open"
+                },
+                {
+                    text: "dragon.context.install_program",
+                    page: "documentation.function_calls.context.install_program"
+                },
+                {
+                    text: "dragon.context.run",
+                    page: "documentation.function_calls.context.run"
+                },
+                {
+                    text: "dragon.time.now",
+                    page: "documentation.function_calls.time.now"
                 }
             ]
         },
