@@ -843,6 +843,98 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.buffer.request",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer.request",
+                        inputs: [ "size !dragon.cell" ],
+                        outputs: [ "buffer !dragon.buffer" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function will attempt to allocate a buffer of 'size' and store it in 'buffer'." },
+                { type: "text", data: "If the allocation fails, the buffer addresses will both be zero." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer.return",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer.return",
+                        inputs: [ "buffer !dragon.buffer" ],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function deallocates a buffer." },
+                { type: "text", data: "NOTE: The buffer given must contain the full allocation with both original pointers in order to be deallocated!" }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer.calculate.length",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.buffer.calculate.length",
+                        inputs: [ "buffer !dragon.buffer" ],
+                        outputs: [ "length !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function returns the length of a given buffer." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer.calculate.end_address",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.calculate.end_address",
+                        inputs: [ "start !dragon.cell", "length !dragon.cell" ],
+                        outputs: [ "end !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a buffer start address and a buffer length and calculates the ending address." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.buffer.calculate.start_address",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.calculate.start_address",
+                        inputs: [ "length !dragon.cell", "end !dragon.cell" ],
+                        outputs: [ "start !dragon.cell" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function takes a buffer length and a buffer end address and calculates the starting address." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
