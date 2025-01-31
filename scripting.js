@@ -53,6 +53,15 @@ let site_json = {
                     type: "external_link",
                     data: "To the dragon's final resting place...",
                     link: "https://github.com/abradinjapan/dragon-programming-language.com"
+                },
+                {
+                    type: "header",
+                    data: "Dragon Official AI Generated Theme Song"
+                },
+                {
+                    type: "external_link",
+                    data: "To the depths of the dragon's mind...",
+                    link: "https://suno.com/song/5e9e2422-d22b-41c7-9f31-c97e2235755e"
                 }
             ]
         },
