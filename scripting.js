@@ -66,9 +66,9 @@ let site_json = {
             ]
         },
         {
-            name: "tutorial.home",
+            name: "welcome.home",
             top_links: "normal",
-            left_links: "tutorial",
+            left_links: "empty",
             content: [
                 {
                     type: "header",
@@ -88,12 +88,54 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon is a scripting language designed primarily for compiler development. Although the language still lacks many features, the base of the language is mainly fleshed out."
+                    data: "The goal of the Dragon programming language is for its users to be able to generate compilers & interpreters robustly and easily."
                 },
                 {
                     type: "text",
-                    data: "This page is a simple dragon tutorial, read on if you dare!"
+                    data: "This website will contain the documentation of Dragon. Including: how the language is designed internally, the syntax, the built in functions and structures, as well as some tutorials on how to use said features."
                 },
+                {
+                    type: "text",
+                    data: "Click any of the top links to get started on your Dragon filled adventure!"
+                },
+                {
+                    type: "header",
+                    data: "WARNING"
+                },
+                {
+                    type: "text",
+                    data: "Dragon is currently in development. Meaning features can become deprecated and undocumented at any time. Reading the compiler code may be necessary in some cases. You have be warned."
+                }
+            ]
+        },
+        {
+            name: "tutorial.fundamental_principles",
+            top_links: "normal",
+            left_links: "tutorial",
+            content: [
+                {
+                    type: "header",
+                    data: "What is Dragon at it's core?"
+                },
+                {
+                    type: "text",
+                    data: "The Dragon programming language is a compiled and interpreted programming langauge where the intepreter calls the compiler to build binary code and then calls the interpreter, from the current interpreter program, to run said binary code."
+                },
+                {
+                    type: "text",
+                    data: "What does this mean?"
+                },
+                {
+                    type: "text",
+                    data: "This means that you can use code to compile, debug, generate and execute other code. All in the same program."
+                }
+            ]
+        },
+        {
+            name: "tutorial.syntax",
+            top_links: "normal",
+            left_links: "tutorial",
+            content: [
                 {
                     type: "header",
                     data: "Syntax"
@@ -104,7 +146,39 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon syntax is broken down into a few main categories: Statements, Functions and Structures."
+                    data: "Dragon syntax is broken down into a few main categories: Comments, Namespaces, Structures, Statements and Functions."
+                },
+                {
+                    type: "header",
+                    data: "Comments"
+                },
+                {
+                    type: "text",
+                    data: "There is only one type of comment and that is the multiline comment."
+                },
+                {
+                    type: "text",
+                    data: "The multiline comment starts with a left square bracket and ends with a right square bracket."
+                },
+                {
+                    type: "text",
+                    data: "Comments can also nest, meaning you can have comments inside other comments. This is useful for example when you want to comment out a function but don't want to either mess with each individual line of code or delete other multiline comments inside the function."
+                },
+                {
+                    type: "text",
+                    data: "Example:"
+                },
+                {
+                    type: "code_block",
+                    data: "[ comment start! [ Hey! I'm [ a nested ] comment! ] [ oof! ] ]"
+                },
+                {
+                    type: "header",
+                    data: "Structures"
+                },
+                {
+                    type: "text",
+                    data: "Structures in Dragon are declared with an exclamation point, a name ([a-zA-Z0-9_.]+), an opening parenthesis, arguments and finaly a closing parenthesis."
                 },
                 {
                     type: "header",
@@ -112,7 +186,11 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "There are three types of statements in Dragon: Dragon calls, scopes and offsets. Dragon calls are the core of dragon syntax. They're very simple yet robust. Dragon calls are composed of three things: A name of the dragon function being called, zero or more input arguments & zero or more output arguments."
+                    data: "There are three types of statements in Dragon: Dragon calls, offsets and scopes."
+                },
+                {
+                    type: "text",
+                    data: "Dragon calls are the core of dragon syntax. They're very simple yet robust. Dragon calls are composed of three things: A name of the dragon function being called, zero or more input arguments & zero or more output arguments."
                 },
                 {
                     type: "text",
@@ -124,15 +202,43 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "There are no semicolons needed at the end of a dragon call. There is also no separate variable declaration syntax."
+                    data: "There are no semicolons at the end of a dragon call. There is also no separate variable declaration syntax."
                 },
                 {
                     type: "text",
-                    data: "Variables in dragon are either declared or reused by writing their name in the output arguments of a Dragon call. This means that if a variable is already declared and is the correct type, it will be overwritten. If it is undeclared, it is declared there in the arguments with the name you give it and the type based on it's position in the function call. And if it's already taken with a different type, the compiler will return an error."
+                    data: "Variables in dragon are either declared or reused by writing their name in the output arguments of a Dragon call. This means that if a variable is already declared and is the correct type, it will be overwritten. If it is undeclared, it is declared there in the arguments with the name you give it and the type based on it's position in the function call. And if it's already taken with a different type, the compiler will inform you of the issue before the code can be run."
                 },
                 {
                     type: "text",
-                    data: "It should also be noted that you can reuse variables from the input arguments in the output arguments. There is no restrictions when using a variable multiple times in either argument set."
+                    data: "Offsets are points that the execution will jump to. They're basically labels, but with a different syntax."
+                },
+                {
+                    type: "text",
+                    data: "Offset syntax is simple, it is an '@' symbol followed by the offset name."
+                },
+                {
+                    type: "text",
+                    data: "Example:"
+                },
+                {
+                    type: "code_block",
+                    data: "@offset_name"
+                },
+                {
+                    type: "text",
+                    data: "Finally, scopes start with an offset name which acts as the name of the scope, all scopes must have a name. Then a !dragon.cell variable must be directly afterwards which acts as a boolean for whether or not the statements inside the scope will execute. Lastly an equals sign and curly brackets to surround your scope must be included."
+                },
+                {
+                    type: "text",
+                    data: "Examples:"
+                },
+                {
+                    type: "code_block",
+                    data: "@scope_name condition = { [ code inside scope here... ] }"
+                },
+                {
+                    type: "code_block",
+                    data: "@dragon.should_fly dragon:ready = {\n\t[ take off ]\n\tdragon.spread_wings(dragon)(wings_ready)\n\n\t[ check for broken wing ]\n\t@dragon.can_fly wings_ready = {\n\t\t[ you get the idea... ]\n\t}\n}"
                 },
                 {
                     type: "header",
@@ -144,7 +250,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "An argument in a function declaration must have exactly one name and exactly one type denoted by an exclamation point. (More on types soon.)"
+                    data: "An argument in a function declaration must have exactly one name and exactly one type denoted by an exclamation point."
                 },
                 {
                     type: "code_block",
@@ -242,7 +348,7 @@ let site_json = {
                 },
                 {
                     type: "code_block",
-                    data: "!dragon.list\n(\n\tallocation !dragon.buffer,\n\tlength !dragon.cell,\n\tincrease !dragon.cell,\n\tappend_count !dragon.cell\n)"
+                    data: "!dragon.list\n(\n\tallocation !dragon.buffer,\n\tlength !dragon.cell,\n\tincrease !dragon.cell\n)"
                 },
                 {
                     type: "text",
@@ -1353,8 +1459,12 @@ let site_json = {
             name: "normal",
             content: [
                 {
+                    text: "Welcome!",
+                    page: "welcome.home"
+                },
+                {
                     text: "Tutorial",
-                    page: "tutorial.home",
+                    page: "tutorial.fundamental_principles",
                 },
                 {
                     text: "Structures",
@@ -1380,8 +1490,12 @@ let site_json = {
             name: "tutorial",
             content: [
                 {
-                    text: "Welcome!",
-                    page: "tutorial.home",
+                    text: "Dragon's Core",
+                    page: "tutorial.fundamental_principles"
+                },
+                {
+                    text: "Syntax",
+                    page: "tutorial.syntax",
                 }
             ]
         },
