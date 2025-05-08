@@ -128,11 +128,19 @@ let site_json = {
                 {
                     type: "text",
                     data: "This means that you can use code to compile, debug, generate and execute other code. All in the same program."
+                },
+                {
+                    type: "header",
+                    data: "Unfortunately"
+                },
+                {
+                    type: "text",
+                    data: "The tutorial is yet to be fully written because the language is still being developed. However the structures and function calls are (mostly) documented in the site's top links. There you can find information about specific dragon features."
                 }
             ]
         },
         {
-            name: "tutorial.syntax",
+            name: "tutorial.basics",
             top_links: "normal",
             left_links: "tutorial",
             content: [
@@ -146,7 +154,7 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "Dragon syntax is broken down into a few main categories: Comments, Namespaces, Structures, Statements and Functions."
+                    data: "Dragon syntax is broken down into a few different things: Comments, Names, Namespaces, Strings, Statements, Structures and Functions."
                 },
                 {
                     type: "header",
@@ -174,11 +182,75 @@ let site_json = {
                 },
                 {
                     type: "header",
-                    data: "Structures"
+                    data: "Names"
                 },
                 {
                     type: "text",
-                    data: "Structures in Dragon are declared with an exclamation point, a name ([a-zA-Z0-9_.]+), an opening parenthesis, arguments and finaly a closing parenthesis."
+                    data: "Names are the unit of namespaces. They are what you use to navigate to which variable name or structure member you want to access."
+                },
+                {
+                    type: "text",
+                    data: "Unlike many other languages, dots are actually just a part of the name. Underscores, uppercase letters, lowercase letters and decimal digits are also all fair game. Otherwise, there is no forced convention on how you name things (except for compiler internal naming)."
+                },
+                {
+                    type: "text",
+                    data: "It should be emphasized that ANY combination of those characters are valid names. So here is a list of names for a good idea about what I'm talking about."
+                },
+                {
+                    type: "code_block",
+                    data: "function.name\n__FUNCTION__\n_.name._\n0\n0.0.34...305432\n0........1\ndragon.run_program.0_9\n0123456789"
+                },
+                {
+                    type: "text",
+                    data: "You may have noticed that numbers can also be names, which is correct. It should be noted that there is a way to insert hard coded data in a specific function shown later. For now just bear in mind syntactically numbers are written using names."
+                },
+                {
+                    type: "text",
+                    data: "Also, here is the regex for you smart cookies out there."
+                },
+                {
+                    type: "code_block",
+                    data: "[a-zA-Z0-9_.]+"
+                },
+                {
+                    type: "header",
+                    data: "Namespaces"
+                },
+                {
+                    type: "text",
+                    data: "Namespaces are exactly what they sound like. They are the way that you interact with variables and structures in order to operate on data."
+                },
+                {
+                    type: "text",
+                    data: "Syntactically, namespaces are just names separated with colons (one colon, not two).\nFor example:"
+                },
+                {
+                    type: "code_block",
+                    data: "root_name:member_name:member_name:desired_variable"
+                },
+                {
+                    type: "text",
+                    data: "There is nothing really to note other than that. Onwards!"
+                },
+                {
+                    type: "header",
+                    data: "Strings"
+                },
+                {
+                    type: "text",
+                    data: "Strings are exactly what they sound like, a block of text surrounded by two double quotes (\"\") with escape sequences. The only difference being that special characters are not inserted using backslashes, they're inserted by a raw one byte hexadecimal value."
+                },
+                {
+                    type: "text",
+                    data: "Data is inserted using a modulous sign, exactly two hexadecimal characters (upper or lower case ok) and finally one semi-colon.\nFor example:"
+                },
+                {
+                    type: "code_block",
+                    data: "\"This is a string with one newline character -> %0a;\"\n\"How about four new lines! -> %0a;%0a;%0a;%0a;\""
+                },
+                {
+                    type: "text",
+                    data: "Do note that any utf-8 characters are also allowed, no escape code necessary just insert them like normal text."
                 },
                 {
                     type: "header",
@@ -186,15 +258,23 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "There are three types of statements in Dragon: Dragon calls, offsets and scopes."
+                    data: "This is where things get interesting. There are three types of statements in Dragon: Dragon calls, offsets and scopes."
                 },
                 {
                     type: "text",
-                    data: "Dragon calls are the core of dragon syntax. They're very simple yet robust. Dragon calls are composed of three things: A name of the dragon function being called, zero or more input arguments & zero or more output arguments."
+                    data: "There are no math expressions. No dedicated variable declaration syntax (like 'X = Y()'). No dedicated array indexing syntax (like 'array[X]'). And many more things that dragon doesn't have."
                 },
                 {
                     type: "text",
-                    data: "Example:"
+                    data: "But, there are still valid ways to write functional and robust code through the dragon syntax. Starting with the dragon call."
+                },
+                {
+                    type: "header",
+                    data: "Dragon Calls"
+                },
+                {
+                    type: "text",
+                    data: "Dragon calls are the core of dragon syntax. They're very simple yet robust. Dragon calls are composed of three things: A name (not namespace) of the dragon function being called, zero or more input arguments & zero or more output arguments."
                 },
                 {
                     type: "code_block",
@@ -202,11 +282,31 @@ let site_json = {
                 },
                 {
                     type: "text",
-                    data: "There are no semicolons at the end of a dragon call. There is also no separate variable declaration syntax."
+                    data: "They can declare variables, operate on data, manage function control flow, call functions and more."
+                },
+                {
+                    type: "text",
+                    data: "Declaring vari"
+                },
+                {
+                    type: "text",
+                    data: "You MUST have both sets of arguments, even if they are empty."
+                },
+                {
+                    type: "code_block",
+                    data: "[ valid ]\ndragon_call()()\n\n[ invalid ]not_dragon_call() ]"
+                },
+                {
+                    type: "text",
+                    data: "There are also no semicolons at the end of a dragon call!"
                 },
                 {
                     type: "text",
                     data: "Variables in dragon are either declared or reused by writing their name in the output arguments of a Dragon call. This means that if a variable is already declared and is the correct type, it will be overwritten. If it is undeclared, it is declared there in the arguments with the name you give it and the type based on it's position in the function call. And if it's already taken with a different type, the compiler will inform you of the issue before the code can be run."
+                },
+                {
+                    type: "header",
+                    data: "Offsets"
                 },
                 {
                     type: "text",
@@ -1492,10 +1592,6 @@ let site_json = {
                 {
                     text: "Dragon's Core",
                     page: "tutorial.fundamental_principles"
-                },
-                {
-                    text: "Syntax",
-                    page: "tutorial.syntax",
                 }
             ]
         },
