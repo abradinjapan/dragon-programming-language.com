@@ -485,6 +485,22 @@ let site_json = {
                 {
                     type: "text",
                     data: "First is the 'file_index', which is intended for use where you have a buffer of loaded files and you want to specify which buffer is being talked about by index.\nSecond is the 'line_number', self-explanitory.\nAnd finally is the 'character_index', which is the raw byte index into the buffer specified by 'file_index'."
+                },
+                {
+                    type: "header",
+                    data: "!dragon.compiler.settings"
+                },
+                {
+                    type: "text",
+                    data: "When calling the dragon compiler from dragon code, there are a few arguments. One of which is the settings you want the compiler to abide by. Each setting is a boolean using a !dragon.cell. Here are the options:"
+                },
+                {
+                    type: "code_block",
+                    data: "!dragon.compiler.settings\n(\n\tinclude_standard !dragon.cell,\n\tdebug_enabled !dragon.cell,\n\tgenerate_kickstarter !dragon.cell\n)"
+                },
+                {
+                    type: "text",
+                    data: "First, the 'include_standard' option determines whether or not the code being compiled ships with any extra features other than the purely built in anvil instructions.\nSecond, the 'debug_enabled' option will print out data to the console about the compilation process and return to the compiler's caller some information about the compiled program.\nAnd finally, the 'generate_kickstarter' option simply determines whether or not the program ships with the code that calls 'dragon.main()()' to start the program."
                 }
             ]
         },
