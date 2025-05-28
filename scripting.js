@@ -469,6 +469,22 @@ let site_json = {
                 {
                     type: "text",
                     data: "The dragon time structure is an integer representation of seconds and nanoseconds. This structure captures a point in time from a dragon function and can be subtracted and added to measure program execution time."
+                },
+                {
+                    type: "header",
+                    data: "!dragon.text.location"
+                },
+                {
+                    type: "text",
+                    data: "The dragon text location structure is for locating bytes and lines inside of loaded buffers used by the compiler and available to the user. There are three primary components:"
+                },
+                {
+                    type: "code_block",
+                    data: "!dragon.text.location\n(\n\tfile_index !dragon.cell,\n\tline_number !dragon.cell,\n\tcharacter_index !dragon.cell\n)"
+                },
+                {
+                    type: "text",
+                    data: "First is the 'file_index', which is intended for use where you have a buffer of loaded files and you want to specify which buffer is being talked about by index.\nSecond is the 'line_number', self-explanitory.\nAnd finally is the 'character_index', which is the raw byte index into the buffer specified by 'file_index'."
                 }
             ]
         },
@@ -593,24 +609,6 @@ let site_json = {
                     type: "text",
                     data: "Apologies, but they are not yet implemented in dragon. :("
                 }
-            ]
-        },
-        {
-            name: "documentation.function_calls.print.debug_cell",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                { type: "header", data: "Valid Configurations" },
-                {
-                    type: "function_documentation",
-                    data: {
-                        name: "dragon.print.debug_cell",
-                        inputs: [ "cell !dragon.cell" ],
-                        outputs: []
-                    }
-                },
-                { type: "header", data: "Description" },
-                { type: "text", data: "This function prints a cell as an unsigned integer." }
             ]
         },
         {
@@ -1605,10 +1603,6 @@ let site_json = {
                 {
                     text: "dragon.set",
                     page: "documentation.function_calls.set"
-                },
-                {
-                    text: "dragon.print.debug_cell",
-                    page: "documentation.function_calls.print.debug_cell"
                 },
                 {
                     text: "dragon.print.character",
