@@ -664,24 +664,6 @@ let site_json = {
             ]
         },
         {
-            name: "documentation.function_calls.print.cell_as_binary",
-            top_links: "normal",
-            left_links: "documentation.functions",
-            content: [
-                { type: "header", data: "Valid Configurations" },
-                {
-                    type: "function_documentation",
-                    data: {
-                        name: "dragon.print.cell_as_binary",
-                        inputs: [ "cell !dragon.cell" ],
-                        outputs: [],
-                    }
-                },
-                { type: "header", data: "Description" },
-                { type: "text", data: "This function prints the full 64 bits of a cell to the console." }
-            ]
-        },
-        {
             name: "documentation.function_calls.print.new_line",
             top_links: "normal",
             left_links: "documentation.functions",
@@ -1420,7 +1402,7 @@ let site_json = {
             ]
         },
         {
-            name: "documentation.function_calls.list.append.structure",
+            name: "documentation.function_calls.list.append.cell",
             top_links: "normal",
             left_links: "documentation.functions",
             content: [
@@ -1428,13 +1410,31 @@ let site_json = {
                 {
                     type: "function_documentation",
                     data: {
-                        name: "dragon.list.append.structure",
-                        inputs: [ "list !dragon.list", "structure ![any_type]" ],
-                        outputs: [],
+                        name: "dragon.list.append.cell",
+                        inputs: [ "list !dragon.list", "data !dragon.cell" ],
+                        outputs: [ "list !dragon.list" ],
                     }
                 },
                 { type: "header", data: "Description" },
-                { type: "text", data: "This function takes a list and appends a structure to the end of it." }
+                { type: "text", data: "This function appends the contents of a cell to the end of the list." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.append.buffer_data",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.append.buffer_data",
+                        inputs: [ "list !dragon.list", "data !dragon.buffer" ],
+                        outputs: [ "list !dragon.list" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function appends the contents of a buffer to the end of list." }
             ]
         },
         {
@@ -1448,11 +1448,83 @@ let site_json = {
                     data: {
                         name: "dragon.list.append.buffer",
                         inputs: [ "list !dragon.list", "data !dragon.buffer" ],
-                        outputs: [],
+                        outputs: [ "list !dragon.list" ],
                     }
                 },
                 { type: "header", data: "Description" },
-                { type: "text", data: "This function appends the contents of a buffer to the end of list." }
+                { type: "text", data: "This function appends a buffer's members to the end of the list. (NOT the data contained in the buffer, just the pointers.)" }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.append.list",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.append.list",
+                        inputs: [ "list !dragon.list", "data !dragon.list" ],
+                        outputs: [ "list !dragon.list" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function appends a list's members to the end of the list. (NOT the data contained in the list, just the pointers & members.)" }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.append.new_line",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.append.new_line",
+                        inputs: [ "list !dragon.list" ],
+                        outputs: [ "list !dragon.list" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function appends one new line to the end of the list." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.append.tabs",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.append.tabs",
+                        inputs: [ "list !dragon.list", "tab_count !dragon.cell" ],
+                        outputs: [ "list !dragon.list" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function appends 'tab_count' amount of tabs to the end of the list." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.list.duplicate_content",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.list.duplicate_content",
+                        inputs: [ "list !dragon.list" ],
+                        outputs: [ "new_allocation !dragon.buffer" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function copies all filled space in the given list to a newly allocated buffer." }
             ]
         },
         {
@@ -1647,10 +1719,6 @@ let site_json = {
                     page: "documentation.function_calls.print.buffer_as_string"
                 },
                 {
-                    text: "dragon.print.cell_as_binary",
-                    page: "documentation.function_calls.print.cell_as_binary"
-                },
-                {
                     text: "dragon.print.new_line",
                     page: "documentation.function_calls.print.new_line"
                 },
@@ -1811,12 +1879,32 @@ let site_json = {
                     page: "documentation.function_calls.list.calculate.content_buffer"
                 },
                 {
-                    text: "dragon.list.append.structure",
-                    page: "documentation.function_calls.list.append.structure"
+                    text: "dragon.list.append.buffer_data",
+                    page: "documentation.function_calls.list.append.buffer_data"
+                },
+                {
+                    text: "dragon.list.append.cell",
+                    page: "documentation.function_calls.list.append.cell"
                 },
                 {
                     text: "dragon.list.append.buffer",
                     page: "documentation.function_calls.list.append.buffer"
+                },
+                {
+                    text: "dragon.list.append.list",
+                    page: "documentation.function_calls.list.append.list"
+                },
+                {
+                    text: "dragon.list.append.new_line",
+                    page: "documentation.function_calls.list.append.new_line"
+                },
+                {
+                    text: "dragon.list.append.tabs",
+                    page: "documentation.function_calls.list.append.tabs"
+                },
+                {
+                    text: "dragon.list.duplicate_content",
+                    page: "documentation.function_calls.list.duplicate_content"
                 },
                 {
                     text: "dragon.compiler.compile",
