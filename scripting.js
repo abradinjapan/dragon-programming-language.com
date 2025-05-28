@@ -1537,12 +1537,30 @@ let site_json = {
                     type: "function_documentation",
                     data: {
                         name: "dragon.compiler.compile",
-                        inputs: [ "code_buffers_buffer !dragon.buffer", "debug_enabled !dragon.cell", "generate_kickstarter !dragon.cell" ],
-                        outputs: [ "anvil_program !dragon.buffer", "debug_information !dragon.buffer", "error_occured !dragon.cell", "error_message !dragon.buffer", "error_location_file_index !dragon.cell", "error_location_line_number !dragon.cell", "error_location_character_index !dragon.cell" ],
+                        inputs: [ "code_buffers_buffer !dragon.buffer", "settings !dragon.compiler.settings" ],
+                        outputs: [ "anvil_program !dragon.buffer", "debug_information !dragon.compiler.debug_information", "error !dragon.compiler.error" ],
                     }
                 },
                 { type: "header", data: "Description" },
                 { type: "text", data: "This function takes a buffer of buffers, along with a few settings, and compiles dragon code to anvil binary code. It also returns some error information." }
+            ]
+        },
+        {
+            name: "documentation.function_calls.compiler.configure.default_compile",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.compiler.configure.default_compile",
+                        inputs: [],
+                        outputs: [ "settings !dragon.compiler.settings" ],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function automatically sets up a default, non-debugging, self-starting & standard included build." }
             ]
         },
         {
@@ -1909,6 +1927,10 @@ let site_json = {
                 {
                     text: "dragon.compiler.compile",
                     page: "documentation.function_calls.compiler.compile"
+                },
+                {
+                    text: "dragon.compiler.configure.default_compile",
+                    page: "documentation.function_calls.compiler.configure.default_compile"
                 },
                 {
                     text: "dragon.context.open",
