@@ -1546,6 +1546,24 @@ let site_json = {
             ]
         },
         {
+            name: "documentation.function_calls.execution.stop",
+            top_links: "normal",
+            left_links: "documentation.functions",
+            content: [
+                { type: "header", data: "Valid Configurations" },
+                {
+                    type: "function_documentation",
+                    data: {
+                        name: "dragon.execution.stop",
+                        inputs: [],
+                        outputs: [],
+                    }
+                },
+                { type: "header", data: "Description" },
+                { type: "text", data: "This function stops the execution of the current context and returns control to the calling context." }
+            ]
+        },
+        {
             name: "documentation.function_calls.",
             top_links: "normal",
             left_links: "documentation.functions",
@@ -1819,6 +1837,10 @@ let site_json = {
                 {
                     text: "dragon.time.now",
                     page: "documentation.function_calls.time.now"
+                },
+                {
+                    text: "dragon.execution.stop",
+                    page: "documentation.function_calls.execution.stop"
                 }
             ]
         },
